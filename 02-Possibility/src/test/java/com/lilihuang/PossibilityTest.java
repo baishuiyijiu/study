@@ -22,7 +22,7 @@ public class PossibilityTest {
     }
 
     @Test
-    public void not() {
+    public void should_get_not_chance() {
         //given
         //when
         double expectedNotChance = 1 - P1;
@@ -32,7 +32,7 @@ public class PossibilityTest {
     }
 
     @Test
-    public void and() {
+    public void should_get_and_chance() {
         //given
         //when
         double doubleAndChance = P1 * P2;
@@ -45,7 +45,7 @@ public class PossibilityTest {
 
 
     @Test
-    public void or() {
+    public void should_get_or_chance() {
         //given
         //when
         double doubleOrChance = P1 + P2 - P1 * P2;
