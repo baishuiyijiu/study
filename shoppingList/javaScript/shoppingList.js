@@ -61,13 +61,8 @@ function shopping() {
 		for (var i = 0; i < itemInput.length; i++) {
 		    var item = itemInput[i];
 		    var pos = item.search("-");
-		    if (pos == -1) {
-		    	var id = item;
-		    	var num = 1;
-		    } else {
-		    	var id = item.substr(0, pos);
-		    	var num = parseInt(item.substr(pos+1));
-		    }
+		    var id = (pos != -1) ? item.substr(0, pos) : item;
+		    var num = (pos != -1) ? parseInt(item.substr(pos + 1)) : 1;
 		    list.has(id) ? list.set(id, list.get(id) + num) : list.set(id, num);
 		}
 		return list;
