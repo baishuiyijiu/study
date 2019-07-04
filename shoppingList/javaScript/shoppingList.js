@@ -1,3 +1,7 @@
+//原型
+//策略
+//class拆分
+
 function shopping() {
 	 class Product {
 		constructor(id, name, price, unit) {
@@ -10,8 +14,8 @@ function shopping() {
 
 	class ProductStore {
 		constructor() {
-			this.discountItems = [];
-			this.buyTwoAndGiveOneItems = [];
+			this.discountItems = [];  //
+			this.buyTwoAndGiveOneItems = [];  //
 			this.products = new Map();
 			this.DISCOUNT = 0.95;
 		}
