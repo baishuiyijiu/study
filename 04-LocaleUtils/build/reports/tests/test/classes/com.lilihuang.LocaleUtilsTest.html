@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">30</div>
+<div class="counter">33</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.030s</div>
+<div class="counter">0.029s</div>
 <p>duration</p>
 </div>
 </td>
@@ -91,22 +91,32 @@
 </tr>
 <tr>
 <td class="success">should_is_locale_start_with_three_length</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should_is_locale_with_lower_char</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should_is_locale_with_numeric</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should_is_locale_with_upper_char</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">should_is_not_ISO639_with_four_length</td>
 <td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">should_is_not_ISO639_with_two_length</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -116,7 +126,7 @@
 </tr>
 <tr>
 <td class="success">should_segments_length_is_three_and_has_ISO639_and_ISO3366</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -126,7 +136,7 @@
 </tr>
 <tr>
 <td class="success">should_segments_length_is_three_and_has_ISO639_and_numeric</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -146,12 +156,12 @@
 </tr>
 <tr>
 <td class="success">should_throw_exception_with_illegal_char1</td>
-<td class="success">0s</td>
+<td class="success">0.016s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should_throw_exception_with_illegal_char2</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -175,52 +185,57 @@
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">should_thrown_illegal_with_empty_language_when_two_segment</td>
+<td class="success">should_thrown_exception_with_empty_language_when_two_segment</td>
 <td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">should_thrown_illegal_with_illegal_country_when_three_segment</td>
-<td class="success">0s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">should_thrown_illegal_with_illegal_country_when_two_segment</td>
+<td class="success">should_thrown_exception_with_illegal_country_when_three_segment</td>
 <td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">should_thrown_illegal_with_illegal_language_and_country_when_two_segment</td>
+<td class="success">should_thrown_exception_with_illegal_country_when_two_segment</td>
 <td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">should_thrown_illegal_with_illegal_language_when_three_segment</td>
-<td class="success">0.020s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">should_thrown_illegal_with_illegal_numeric_when_two_segment</td>
-<td class="success">0.002s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">should_thrown_illegal_with_lower_country_when_two_segment</td>
+<td class="success">should_thrown_exception_with_illegal_language_and_country_when_two_segment</td>
 <td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">should_thrown_illegal_with_no_arguments_when_three_segment</td>
+<td class="success">should_thrown_exception_with_illegal_language_when_three_segment</td>
 <td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">should_thrown_illegal_with_three_illegal_arguments_when_three_segment</td>
-<td class="success">0.001s</td>
+<td class="success">should_thrown_exception_with_illegal_length_when_two_segment</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">should_thrown_illegal_with_variant_is_empty_when_three_segment</td>
+<td class="success">should_thrown_exception_with_illegal_numeric_when_two_segment</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">should_thrown_exception_with_lower_country_when_two_segment</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">should_thrown_exception_with_no_arguments_when_three_segment</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">should_thrown_exception_with_three_illegal_arguments_when_three_segment</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">should_thrown_exception_with_variant_is_empty_when_three_segment</td>
 <td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
@@ -234,7 +249,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.9</a> at 2019-7-7 23:18:50</p>
+<a href="http://www.gradle.org">Gradle 4.9</a> at 2019-7-8 1:05:23</p>
 </div>
 </div>
 </body>

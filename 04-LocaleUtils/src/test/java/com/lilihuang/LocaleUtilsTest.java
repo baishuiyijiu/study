@@ -12,6 +12,7 @@ import static cn.minsin.core.constant.StringConstant.EMPTY;
 import static cn.minsin.core.constant.StringConstant.NULL;
 
 public class LocaleUtilsTest {
+    //    private org.apache.commons.lang3.LocaleUtils
     private LocaleUtils localeUtils;
 
     @Rule
@@ -196,6 +197,32 @@ public class LocaleUtilsTest {
     }
 
     @Test
+    public void should_is_not_ISO639_with_two_length() {
+        //given
+        String str = "aA";
+
+        //when
+
+        //then
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid locale format: " + str);
+        localeUtils.toLocale(str);
+    }
+
+    @Test
+    public void should_is_not_ISO639_with_four_length() {
+        //given
+        String str = "aaaa";
+
+        //when
+
+        //then
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid locale format: " + str);
+        localeUtils.toLocale(str);
+    }
+
+    @Test
     public void should_is_ISO639_with_three_length() {
         //given
         String str = "aaa";
@@ -221,6 +248,19 @@ public class LocaleUtilsTest {
         Assert.assertEquals(new Locale(language, country), result);
     }
 
+    @Test
+    public void should_thrown_exception_with_illegal_length_when_two_segment() {
+        //given
+        String str = "aa_BBB";
+
+        //when
+
+        //then
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid locale format: " + str);
+        localeUtils.toLocale(str);
+    }
+
 
     @Test
     public void should_segments_length_is_two_and_has_ISO639_and_ISO3366_numeric() {
@@ -237,7 +277,7 @@ public class LocaleUtilsTest {
     }
 
     @Test
-    public void should_thrown_illegal_with_illegal_numeric_when_two_segment() {
+    public void should_thrown_exception_with_illegal_numeric_when_two_segment() {
         //given
         String str = "aa_11";
 
@@ -250,7 +290,7 @@ public class LocaleUtilsTest {
     }
 
     @Test
-    public void should_thrown_illegal_with_lower_country_when_two_segment() {
+    public void should_thrown_exception_with_lower_country_when_two_segment() {
         //given
         String str = "aa_bb";
 
@@ -263,7 +303,7 @@ public class LocaleUtilsTest {
     }
 
     @Test
-    public void should_thrown_illegal_with_illegal_language_and_country_when_two_segment() {
+    public void should_thrown_exception_with_illegal_language_and_country_when_two_segment() {
         //given
         String str = "AA_11";
 
@@ -276,7 +316,7 @@ public class LocaleUtilsTest {
     }
 
     @Test
-    public void should_thrown_illegal_with_illegal_country_when_two_segment() {
+    public void should_thrown_exception_with_illegal_country_when_two_segment() {
         //given
         String str = "AA_aa";
 
@@ -335,7 +375,7 @@ public class LocaleUtilsTest {
 
 
     @Test
-    public void should_thrown_illegal_with_empty_language_when_two_segment() {
+    public void should_thrown_exception_with_empty_language_when_two_segment() {
         //given
         String str = "__BB";
 
@@ -348,7 +388,7 @@ public class LocaleUtilsTest {
     }
 
     @Test
-    public void should_thrown_illegal_with_no_arguments_when_three_segment() {
+    public void should_thrown_exception_with_no_arguments_when_three_segment() {
         //given
         String str = "___";
 
@@ -361,7 +401,7 @@ public class LocaleUtilsTest {
     }
 
     @Test
-    public void should_thrown_illegal_with_three_illegal_arguments_when_three_segment() {
+    public void should_thrown_exception_with_three_illegal_arguments_when_three_segment() {
         //given
         String str = " _ _ ";
 
@@ -374,7 +414,7 @@ public class LocaleUtilsTest {
     }
 
     @Test
-    public void should_thrown_illegal_with_variant_is_empty_when_three_segment() {
+    public void should_thrown_exception_with_variant_is_empty_when_three_segment() {
         //given
         String str = "aa_111_";
 
@@ -387,7 +427,7 @@ public class LocaleUtilsTest {
     }
 
     @Test
-    public void should_thrown_illegal_with_illegal_language_when_three_segment() {
+    public void should_thrown_exception_with_illegal_language_when_three_segment() {
         //given
         String str = "Aa_111_1";
 
@@ -400,7 +440,7 @@ public class LocaleUtilsTest {
     }
 
     @Test
-    public void should_thrown_illegal_with_illegal_country_when_three_segment() {
+    public void should_thrown_exception_with_illegal_country_when_three_segment() {
         //given
         String str = "aaa_1a_1";
 
