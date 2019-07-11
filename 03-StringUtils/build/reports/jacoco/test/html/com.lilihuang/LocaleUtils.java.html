@@ -7,8 +7,8 @@ import java.util.Locale;
     private static final String EMPTY = &quot;&quot;;
 
     public Locale toLocale(final String str) {
-<span class="fc bfc" id="L10" title="All 2 branches covered.">        if (str == null) {</span>
-<span class="fc" id="L11">            return null;</span>
+<span class="pc bpc" id="L10" title="1 of 2 branches missed.">        if (str == null) {</span>
+<span class="nc" id="L11">            return null;</span>
         }
 <span class="fc bfc" id="L13" title="All 2 branches covered.">        if (str.isEmpty()) { // LANG-941 - JDK 8 introduced an empty locale where all fields are blank</span>
 <span class="fc" id="L14">            return new Locale(EMPTY, EMPTY);</span>
