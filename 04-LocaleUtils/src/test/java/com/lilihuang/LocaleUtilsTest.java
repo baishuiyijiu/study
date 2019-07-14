@@ -1,6 +1,5 @@
 package com.lilihuang;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -8,8 +7,7 @@ import org.junit.rules.ExpectedException;
 
 import java.util.Locale;
 
-import static cn.minsin.core.constant.StringConstant.EMPTY;
-import static cn.minsin.core.constant.StringConstant.NULL;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LocaleUtilsTest {
     private LocaleUtils localeUtils;
@@ -25,23 +23,17 @@ public class LocaleUtilsTest {
     @Test
     public void should_is_null() {
         //given
-
         //when
-        Locale result = localeUtils.toLocale(NULL);
-
         //then
-        Assert.assertNull(result);
+        assertThat(localeUtils.toLocale(null)).isEqualTo(null);
     }
 
     @Test
     public void should_is_empty() {
         //given
-
         //when
-        Locale result = localeUtils.toLocale(EMPTY);
-
         //then
-        Assert.assertEquals(new Locale(EMPTY, EMPTY), result);
+        assertThat(localeUtils.toLocale("")).isEqualToComparingFieldByField(new Locale("", ""));
     }
 
     @Test
@@ -113,7 +105,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(EMPTY, str.substring(1, 3)), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale("", str.substring(1, 3)));
     }
 
     @Test
@@ -149,7 +141,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(EMPTY, str.substring(1, 3), str.substring(4)), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale("", str.substring(1, 3), str.substring(4)));
     }
 
     @Test
@@ -161,7 +153,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(EMPTY, str.substring(1, 3), str.substring(4)), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale("", str.substring(1, 3), str.substring(4)));
     }
 
     @Test
@@ -173,7 +165,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(EMPTY, str.substring(1, 3), str.substring(4)), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale("", str.substring(1, 3), str.substring(4)));
     }
 
     @Test
@@ -185,7 +177,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(str), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale(str));
     }
 
     @Test
@@ -221,7 +213,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(str), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale(str));
     }
 
     @Test
@@ -235,7 +227,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(language, country), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale(language, country));
     }
 
     @Test
@@ -262,7 +254,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(language, country), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale(language, country));
     }
 
     @Test
@@ -325,7 +317,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(language, country, variant), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale(language, country, variant));
     }
 
     @Test
@@ -340,7 +332,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(language, country, variant), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale(language, country, variant));
     }
 
     @Test
@@ -355,7 +347,7 @@ public class LocaleUtilsTest {
         Locale result = localeUtils.toLocale(str);
 
         //then
-        Assert.assertEquals(new Locale(language, country, variant), result);
+        assertThat(result).isEqualToComparingFieldByField(new Locale(language, country, variant));
     }
 
 
@@ -384,6 +376,18 @@ public class LocaleUtilsTest {
     }
 
     @Test
+    public void should_thrown_exception_with_no_arguments_when_two_segment() {
+        //given
+        String str = "aa_";
+
+        //when
+        //then
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid locale format: " + str);
+        localeUtils.toLocale(str);
+    }
+
+    @Test
     public void should_thrown_exception_with_variant_is_empty_when_three_segment() {
         //given
         String str = "aa_111_";
@@ -401,7 +405,6 @@ public class LocaleUtilsTest {
         String str = "Aa_111_1";
 
         //when
-
         //then
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid locale format: " + str);
@@ -414,7 +417,6 @@ public class LocaleUtilsTest {
         String str = "aaa_1a_1";
 
         //when
-
         //then
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid locale format: " + str);
