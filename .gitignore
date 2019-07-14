@@ -1,7 +1,6 @@
 *.ipr
 *.iws
 *.iml
-.DS_Store
 out
 .gradle
 .DS_Store
