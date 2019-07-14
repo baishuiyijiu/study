@@ -1,9 +1,9 @@
 *.ipr
-gradle
 *.iws
-*iml
+*.iml
 *.DS_Store
-*bat
 out
 .gradle
 .DS_Store
+build
+
