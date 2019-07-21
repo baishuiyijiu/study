@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mock-seed.iml" filepath="$PROJECT_DIR$/mock-seed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mock-seed_main.iml" filepath="$PROJECT_DIR$/.idea/modules/mock-seed_main.iml" group="mock-seed" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mock-seed_test.iml" filepath="$PROJECT_DIR$/.idea/modules/mock-seed_test.iml" group="mock-seed" />
+    </modules>
+  </component>
+</project>
